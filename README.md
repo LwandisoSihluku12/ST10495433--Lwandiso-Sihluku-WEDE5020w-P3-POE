@@ -61,7 +61,48 @@ Added JavaScript to handle menu toggling and accessibility.
 Included product cards, sneaker drop calendar, and contact form iframe.
 
 Changes from Part 2 feedback.
-Edited code to allow navigation to adapt to smaller screens
+Edited code to allow navigation to adapt to smaller sreens
+
+Changelog updates for PART 3
+Implemented Google Maps iframe embedded showing Johannesburg location
+- **Note:** Uses Google Maps embed API (not Leaflet/Mapbox, but meets the requirement for location-based features)
+styles.css (multiple locations)
+- **Examples:**
+  - Navigation links: `transition: color 0.3s` (line 70)
+  - Product cards: `transition: transform 0.3s, box-shadow 0.3s` (line 314)
+  - Hover effects on product cards: `transform: translateY(-5px)` (line 319)
+  - Button hover transitions (lines 207-209, 437-439)
+  Tab switching functionality (lines 41-67) - dynamically shows/hides content
+  - Cart rendering (lines 152-199) - dynamically creates HTML elements
+  - Mobile menu toggle (lines 21-24) - manipulates CSS classes
+  - Product accordion toggle (referenced in products.html)
+  Cart items are dynamically loaded and rendered from JavaScript array
+- **Example:** `renderCart()` function creates HTML for cart items dynamically
+Proper use of H1, H2, H3, H4 throughout all pages
+- **Example:** H1 for main heading, H2 for sections, H3 for subsections
+- index.html: Descriptive title and meta description (lines 21, 26)
+  - products.html: Page-specific meta description (line 6)
+  - contact.html: Page-specific meta description (line 6)
+Create enquiry.html with appropriate form
+- Animations and transitions
+- Advanced DOM manipulation
+- Dynamic content loading
+- Most SEO on-page requirements
+- Contact form with validation
+- Mobile-responsive design
+- Header tags structure
+- Internal linking
+- Interactive maps (Google Maps instead of Leaflet/Mapbox)
+- Image optimization (alt text present, but generic file names)
+- JavaScript form validation (basic, could be more comprehensive)
+- Form submission (demo only, no backend)
+- Security (basic for static site)
+
+
+
+References 
+OpenAI (2025) ChatGPT conversation on creating a robots.txt file. OpenAI. Available at: https://chat.openai.com
+ (Accessed: 16 November 2025).
 
 Author
 Lwandiso Sihluku
