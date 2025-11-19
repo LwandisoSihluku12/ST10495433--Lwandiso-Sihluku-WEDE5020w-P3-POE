@@ -60,6 +60,9 @@ Styled pages with CSS for layout, typography, and responsive design.
 Added JavaScript to handle menu toggling and accessibility.
 Included product cards, sneaker drop calendar, and contact form iframe.
 
+Changes from Part 2 feedback.
+Edited code to allow navigation to adapt to smaller screens
+
 Author
 Lwandiso Sihluku
 Student project for learning web development basics.
