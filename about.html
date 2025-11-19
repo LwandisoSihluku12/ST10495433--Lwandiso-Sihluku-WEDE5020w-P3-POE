@@ -1,105 +1,184 @@
-<!DOCTYPE html> 
-<!-- This tells the browser the type of document (HTML5 in this case). -->
-
-<html lang="en"> 
-<!-- The whole webpage is written in English. -->
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> 
-    <!-- Defines the character set, ensures text displays correctly (accents, symbols, etc.). -->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <!-- Makes the website responsive (works on phones, tablets, desktops). -->
+    <!-- This section contains information about the page for browsers and search engines.-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO: Description that appears in search results--> 
-    <meta name="description" content="Learn more about Zeus Online Sneaker Store, our mission, vision, and the team behind our success.">
-    <title>Zeus Online Sneaker Store | About Us</title>
-    <!-- The title appears on the browser tab. -->
-
-    <!-- Hooked stylesheet -->
-    <link rel="stylesheet" href="zeus-style.css">
-    <!-- Links an external CSS file that controls the page’s design. -->
+    <!-- SEO: Description that appears in search results -->
+    <meta name="description" content="Learn about Zeus Sneakers - our history, mission, vision, and team.">
+    
+    <!-- Page title that appears in browser tab -->
+    <title>About Us - Zeus Sneakers</title>
+    
+    <!-- Link to external CSS stylesheet for styling -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <div class="page"> <!-- Wrapper div to group everything on the page -->
+    <!--
+         NAVIGATION BAR
+         Updated changes made to allow for better mobile responsiveness (as per part 2 feed back)
+         Same navigation appears on all pages for consistency.
+         The mobile menu toggle button is hidden on desktop and shown on mobile.
+    -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">⚡ ZEUS SNEAKERS</a>
+            <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- ================= HEADER ================= -->
-    <header class="header">
-      <div class="container header__inner">
-        <div class="brand">ZEUS SNEAKERS</div> <!-- Website logo or brand name -->
+    <!-- ========================================
+         MAIN CONTENT AREA
+         ========================================
+         
+         The container class centers content and adds padding.
+         All content sections use white background cards for visual separation.
+    -->
+    <div class="container">
+        <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem;">About Us</h1>
 
-        <!-- Navigation bar -->
-        <nav class="nav">
-          <a href="index.html" class="nav__link">Home</a>
-          <a href="about.html" class="nav__link">About Us</a>
-          <a href="products.html" class="nav__link">Products</a>
-          <a href="cart.html" class="nav__link">Cart</a>
-          <a href="contact.html" class="nav__link">Contact Us</a>
-        </nav>
+        <!-- ========================================
+             HISTORY SECTION
+             ========================================
+             
+             Tells the story of how Zeus Sneakers started and grew.
+        -->
+        <section style="margin-bottom: 3rem; background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: #ea580c;">History</h2>
+            <p style="color: #374151; line-height: 1.8;">
+                Ten years ago, ZEUS Online Sneaker Store was founded with the goal of developing a reliable 
+                online marketplace for high-end shoes. What started out as a targeted internet business selling 
+                a small selection of trainers swiftly became a top destination for buyers seeking genuine, premium 
+                brands. Over the last ten years, ZEUS has built a reputation for dependability, effective customer 
+                service, and a carefully curated product line that balances both classic and modern sneaker trends. 
+                Today, ZEUS is recognized as a leader in online sneaker retail, dedicated to innovation, customer 
+                delight, and long-term success.
+            </p>
+        </section>
 
-        <!-- Mobile menu button (hamburger menu) -->
-        <button class="header__burger">☰</button>
-         <span></span>
-        <span></span>
-       <span></span>
-      </div>
-    </header>
+        <!-- ========================================
+             MISSION SECTION
+             ========================================
+             
+             Explains what the company aims to achieve.
+        -->
+        <section style="margin-bottom: 3rem; background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: #ea580c;">Mission</h2>
+            <p style="color: #374151; line-height: 1.8;">
+                Our mission at ZEUS Online Sneaker Store is to provide customers with authentic, high-quality 
+                sneakers through a seamless digital shopping experience. We are committed to delivering excellence 
+                by combining trusted brands, innovative technology, and exceptional customer service to meet the 
+                evolving needs of sneaker enthusiasts.
+            </p>
+        </section>
 
-    <!-- ================= MAIN CONTENT ================= -->
-    <main class="main container">
-      <!-- Main heading for this page -->
-      <h1>About Us</h1>
+        <!-- ========================================
+             VISION SECTION
+             ========================================
+             
+             Describes the company's long-term goals and aspirations.
+        -->
+        <section style="margin-bottom: 3rem; background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: #ea580c;">Vision</h2>
+            <p style="color: #374151; line-height: 1.8;">
+                Our vision is to be the leading online destination for premium sneakers in Africa and beyond, 
+                recognized for our reliability, innovation, and commitment to shaping the future of digital 
+                footwear retail.
+            </p>
+        </section>
 
-      <!-- Section: History -->
-      <section class="mt-md">
-        <h2>History</h2>
-        <p>
-          Ten years ago, ZEUS Online Sneaker Store was founded with the goal of developing 
-          a reliable online marketplace for high-end shoes...
-        </p>
-      </section>
+        <!-- ========================================
+             TEAM SECTION
+             ========================================
+             
+             Introduces the people behind Zeus Sneakers.
+        -->
+        <section style="margin-bottom: 3rem; background-color: white; padding: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 1rem; color: #ea580c;">Our Team</h2>
+            <p style="color: #374151; line-height: 1.8; margin-bottom: 1.5rem;">
+                At ZEUS Online Sneaker Store, our team is composed of passionate individuals who are dedicated 
+                to delivering the best online shopping experience for sneaker enthusiasts. From our customer 
+                service representatives to our logistics experts, every member of our team plays a crucial role 
+                in ensuring that our customers receive authentic products and exceptional service. We pride 
+                ourselves on our collaborative culture, where innovation and customer satisfaction are at the 
+                forefront of everything we do.
+            </p>
 
-      <!-- Section: Mission -->
-      <section class="mt-md">
-        <h2>Mission</h2>
-        <p>
-          Our mission at ZEUS Online Sneaker Store is to provide customers with authentic, 
-          high-quality sneakers through a seamless digital shopping experience...
-        </p>
-      </section>
+            <!-- TEAM MEMBERS GRID
+                 ========================================
+                 
+                 Uses CSS Grid to display team members in a responsive layout.
+                 On mobile: 1 column, On tablet/desktop: 2+ columns
+            -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <!-- Managing Director -->
+                <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ea580c;">
+                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">Managing Director</h3>
+                    <p style="color: #374151; font-weight: 600;">Lwandiso Sihluku</p>
+                </div>
 
-      <!-- Section: Vision -->
-      <section class="mt-md">
-        <h2>Vision</h2>
-        <p>
-          Our vision is to be the leading online destination for premium sneakers in Africa 
-          and beyond, recognized for our reliability, innovation...
-        </p>
-      </section>
+                <!-- Customer Service Manager -->
+                <div style="background-color: #f9fafb; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #ea580c;">
+                    <h3 style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">Customer Service Manager</h3>
+                    <p style="color: #374151; font-weight: 600;">Jane Doe</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
-      <!-- Section: Team -->
-      <section class="mt-md">
-        <h2>Our Team</h2>
-        <p>
-          At ZEUS Online Sneaker Store, our team is composed of passionate individuals...
-        </p>
-
-        <!-- Subheadings for team members -->
-        <h3>Managing Director</h3>
-        <p>Lwandiso Sihluku</p>
-
-        <h3>Customer Service Manager</h3>
-        <p>Jane Doe</p>
-      </section>
-    </main>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer u-center">
-      <p>&copy; 2024 Zeus Online Sneaker Store. All rights reserved.</p>
-      <!-- &copy; = copyright symbol -->
+    <!-- ========================================
+         FOOTER
+         ========================================
+         
+         Same footer appears on all pages.
+         Contains quick links, contact info, and copyright notice.
+    -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Zeus Sneakers</h3>
+                <p>Your trusted source for premium sneakers. We bring you the latest styles and timeless classics from top brands around the world.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@zeussneakers.com</p>
+                <p>Phone: +27 123 456 789</p>
+                <p>Location: Johannesburg, South Africa</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Zeus Sneakers. All rights reserved.</p>
+        </div>
     </footer>
-  </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-<!-- End of the HTML document -->
