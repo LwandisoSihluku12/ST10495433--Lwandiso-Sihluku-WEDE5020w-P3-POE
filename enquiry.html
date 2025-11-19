@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ENQUIRY PAGE
+         This page allows users to submit enquiries about products, services, volunteering, and sponsorship. -
+    -->
+    <meta charset="UTF-8"> <!-- Character encoding for proper text display -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes site responsive on mobile -->
+    <meta name="description" content="Enquire about Zeus Sneakers products, services, volunteer opportunities, and sponsorship. Get personalized responses to your questions.">
+    <meta name="keywords" content="zeus sneakers enquiry, product inquiry, volunteer, sponsor, partnership">
+    <title>Enquiry - Zeus Sneakers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- NAVIGATION BAR-->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">⚡ ZEUS SNEAKERS</a>
+            <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 
+         MAIN CONTENT AREA
+    -->
+    <div class="container">
+        <h1>Product & Service Enquiry</h1>
+        <p style="font-size: 1.125rem; color: #6b7280; margin-bottom: 2rem;">
+            Interested in our products, services, or partnership opportunities? Fill out the form below and we'll get back to you with detailed information tailored to your needs.
+        </p>
+
+        <div class="contact-grid">
+            <!-- 
+                 ENQUIRY FORM
+                 This form collects enquiry information from users.
+                 Unlike the contact form, this is specifically for:
+                 - Product information requests
+                 - Service enquiries
+                 - Volunteer applications
+                 - Sponsorship opportunities
+            -->
+            <div class="contact-form">
+                <h2>Send us an Enquiry</h2>
+                
+                <!-- The form element wraps all input fields -->
+                <form id="enquiry-form" onsubmit="return validateEnquiryForm()">
+                    
+                    <!-- Full Name Input -->
+                    <label for="name">Full Name *</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required 
+                        placeholder="John Doe"
+                        aria-label="Full Name"
+                    >
+                    
+                    <!-- Email Input -->
+                    <label for="email">Email Address *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        placeholder="john@example.com"
+                        aria-label="Email Address"
+                    >
+                    
+                    <!-- Phone Number Input -->
+                    <label for="phone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="+27 123 456 789"
+                        aria-label="Phone Number"
+                    >
+                    
+                    <!-- Enquiry Type Dropdown -->
+                    <label for="enquiry-type">Enquiry Type *</label>
+                    <select id="enquiry-type" name="enquiry-type" required aria-label="Enquiry Type">
+                        <option value="">Select enquiry type</option>
+                        <option value="product">Product Information</option>
+                        <option value="service">Service Enquiry</option>
+                        <option value="pricing">Pricing & Availability</option>
+                        <option value="bulk">Bulk Order</option>
+                        <option value="volunteer">Volunteer Opportunity</option>
+                        <option value="sponsor">Sponsorship/Partnership</option>
+                        <option value="other">Other</option>
+                    </select>
+                    
+                    <!-- Product Interest (conditional field) -->
+                    <label for="product-interest">Product of Interest (if applicable)</label>
+                    <input 
+                        type="text" 
+                        id="product-interest" 
+                        name="product-interest" 
+                        placeholder="e.g., ZEUS TITAN Men's Sneaker"
+                        aria-label="Product of Interest"
+                    >
+                    
+                    <!-- Budget Range (for pricing enquiries) -->
+                    <label for="budget">Budget Range (if applicable)</label>
+                    <select id="budget" name="budget" aria-label="Budget Range">
+                        <option value="">Select budget range</option>
+                        <option value="under-1000">Under R1,000</option>
+                        <option value="1000-2000">R1,000 - R2,000</option>
+                        <option value="2000-5000">R2,000 - R5,000</option>
+                        <option value="5000-10000">R5,000 - R10,000</option>
+                        <option value="over-10000">Over R10,000</option>
+                    </select>
+                    
+                    <!-- Quantity (for bulk orders) -->
+                    <label for="quantity">Quantity (for bulk orders)</label>
+                    <input 
+                        type="number" 
+                        id="quantity" 
+                        name="quantity" 
+                        min="1" 
+                        placeholder="e.g., 50"
+                        aria-label="Quantity"
+                    >
+                    
+                    <!-- Message/Details Textarea -->
+                    <label for="message">Enquiry Details *</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="6" 
+                        required 
+                        placeholder="Please provide detailed information about your enquiry. For volunteer or sponsorship opportunities, include relevant background information."
+                        aria-label="Enquiry Details"
+                    ></textarea>
+                    
+                    <!-- Preferred Contact Method -->
+                    <label for="contact-method">Preferred Contact Method *</label>
+                    <select id="contact-method" name="contact-method" required aria-label="Preferred Contact Method">
+                        <option value="">Select contact method</option>
+                        <option value="email">Email</option>
+                        <option value="phone">Phone Call</option>
+                        <option value="whatsapp">WhatsApp</option>
+                    </select>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-primary">Submit Enquiry</button>
+                </form>
+            </div>
+
+            <!-- 
+                 ENQUIRY INFORMATION
+            -->
+            <div class="contact-info">
+                <h2>📋 Enquiry Information</h2>
+                
+                <!-- Response Time -->
+                <div class="contact-item">
+                    <span class="contact-icon">⏱️</span>
+                    <div>
+                        <h3>Response Time</h3>
+                        <p>We aim to respond to all enquiries within 24-48 hours during business days.</p>
+                    </div>
+                </div>
+                
+                <!-- What to Expect -->
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <div>
+                        <h3>What to Expect</h3>
+                        <p><strong>Product Enquiries:</strong> Detailed product specifications, availability, and pricing.</p>
+                        <p><strong>Service Enquiries:</strong> Information about our services and how we can help.</p>
+                        <p><strong>Volunteer:</strong> Application process and available opportunities.</p>
+                        <p><strong>Sponsorship:</strong> Partnership packages and collaboration options.</p>
+                    </div>
+                </div>
+                
+                <!-- Direct Contact -->
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <h3>Need Immediate Help?</h3>
+                        <p><strong>Email:</strong> enquiries@zeussneakers.com</p>
+                        <p><strong>Phone:</strong> +27 123 456 789</p>
+                        <p><strong>WhatsApp:</strong> +27 123 456 789</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: #6b7280;">
+                            Mon-Fri: 9:00 AM - 6:00 PM<br>
+                            Sat: 10:00 AM - 2:00 PM
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Link -->
+                <div class="contact-item">
+                    <span class="contact-icon">❓</span>
+                    <div>
+                        <h3>Frequently Asked Questions</h3>
+                        <p>Before submitting an enquiry, check our <a href="#faq" style="color: #ea580c; text-decoration: underline;">FAQ section</a> for quick answers to common questions.</p>
+                    </div>
+                </div>
+                
+                <!-- Business Hours Box -->
+                <div style="background-color: #fef3c7; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #f59e0b; margin-top: 2rem;">
+                    <h3 style="margin-top: 0; color: #92400e;">Business Hours</h3>
+                    <p style="margin: 0.5rem 0; color: #78350f;"><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                    <p style="margin: 0.5rem 0; color: #78350f;"><strong>Saturday:</strong> 10:00 AM - 2:00 PM</p>
+                    <p style="margin: 0.5rem 0; color: #78350f;"><strong>Sunday:</strong> Closed</p>
+                    <p style="margin-top: 1rem; font-size: 0.875rem; color: #78350f;">
+                        Enquiries submitted outside business hours will be processed on the next business day.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+         FOOTER SECTION
+    -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Zeus Sneakers</h3>
+                <p>Your trusted source for premium sneakers. We deliver quality, style, and comfort with every pair.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@zeussneakers.com</p>
+                <p>Phone: +27 123 456 789</p>
+                <p>Address: 123 Sneaker Street, Johannesburg</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Zeus Sneakers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 
+         JAVASCRIPT FILE
+    -->
+    <script src="script.js"></script>
+</body>
+</html>

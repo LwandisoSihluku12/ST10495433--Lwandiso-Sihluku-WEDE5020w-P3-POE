@@ -1,114 +1,143 @@
 <!DOCTYPE html>
-<!-- This declares the document as HTML5 -->
-
 <html lang="en">
-<!-- The language of the page is English -->
-
 <head>
-  <meta charset="UTF-8">
-  <!-- Ensures text (letters, symbols, accents) displays correctly -->
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Makes the site mobile-friendly and responsive -->
-
-  <title>Zeus Online Sneaker Store | Checkout</title>
-  <!-- The page title appears on the browser tab -->
-
-  <!-- Hooked stylesheet -->
-  <link rel="stylesheet" href="zeus-style.css">
-  <!-- Connects to the external CSS file that controls the look of the page -->
+    <!-- CART PAGE
+         This page displays the user's shopping cart with items they want to purchase. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your shopping cart at Zeus Sneakers.">
+    <title>Shopping Cart - Zeus Sneakers</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <div class="page">
-    <!-- A wrapper div to group everything on the page -->
+    <!-- NAVIGATION BAR-->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">⚡ ZEUS SNEAKERS</a>
+            <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <!-- ================= HEADER ================= -->
-    <header class="header">
-      <div class="container header__inner">
-        <div class="brand">ZEUS SNEAKERS</div> <!-- Website brand/logo -->
+    <!--MAIN CONTENT AREA -->
+    <div class="container">
+        <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 2rem;">Shopping Cart</h1>
 
-        <!-- Navigation menu -->
-        <nav class="nav">
-          <a href="index.html" class="nav__link">Home</a>
-          <a href="about.html" class="nav__link">About Us</a>
-          <a href="products.html" class="nav__link">Products</a>
-          <a href="cart.html" class="nav__link">Cart</a>
-          <a href="contact.html" class="nav__link">Contact Us</a>
-        </nav>
+        <!-- CART CONTAINER-->
+        <div class="cart-container">
+            <!-- CART ITEMS SECTION
+                 Dynamically populated list of cart items.  
+            -->
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be dynamically inserted here by JavaScript -->
+            </div>
 
-        <!-- Burger button for mobile navigation -->
-        <button class="header__burger">☰</button>
-      </div>
-    </header>
+            <!-- CART SUMMARY SECTION
+                 Shows the order total and checkout button.
+            -->
+            <div class="cart-summary">
+                <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem;">Order Summary</h2>
+                
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">R0</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Shipping:</span>
+                    <span>R150</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span>Tax:</span>
+                    <span>Included</span>
+                </div>
+                
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="total">R0</span>
+                </div>
 
-    <!-- ================= MAIN CONTENT ================= -->
-    <main class="main container">
-      <h1>Checkout</h1>
-      <!-- Main heading for the page -->
+                <button 
+                    onclick="checkout()" 
+                    style="width: 100%; margin-top: 1rem; background-color: #ea580c; color: white; padding: 1rem; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer;"
+                >
+                    Proceed to Checkout
+                </button>
 
-      <p>
-        Ready to finalize your purchase? You're just a few clicks away 
-        from owning your favorite sneakers! Fill out the form below...
-      </p>
+                <a 
+                    href="products.html" 
+                    style="display: block; text-align: center; margin-top: 1rem; color: #ea580c; text-decoration: none; font-weight: 500;"
+                >
+                    Continue Shopping
+                </a>
+            </div>
+        </div>
 
-      <!-- ============== CHECKOUT FORM ============== -->
-      <!-- "action" = where the form sends data after submission -->
-      <!-- "method=post" = sends data securely (not visible in URL) -->
-      <form action="confirmation.html" method="post" class="mt-md">
+        <!--
+             SHIPPING INFORMATION BANNER
+             Green banner to highlight free shipping offer.
+        -->
+        <div style="background-color: #f0fdf4; padding: 1.5rem; border-radius: 8px; margin-top: 3rem; border-left: 4px solid #22c55e;">
+            <h3 style="font-weight: 600; margin-bottom: 0.5rem; color: #166534;">Free Shipping Available!</h3>
+            <p style="color: #166534;">Orders over R2,000 qualify for free shipping across South Africa.</p>
+        </div>
 
-        <!-- Customer Details Section -->
-        <fieldset class="filter">
-          <!-- Groups related form fields -->
-          <legend>Customer Details</legend>
-          <!-- Title for this fieldset -->
+        <!-- 
+             PAYMENT METHODS SECTION
+             Shows which payment options are accepted.
+        -->
+        <div style="margin-top: 3rem; text-align: center;">
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">We Accept</h3>
+            <p style="color: #6b7280;">Visa • Mastercard • American Express • PayPal • EFT</p>
+        </div>
+    </div>
 
-          <!-- Input for Full Name -->
-          <label for="fullname">Full Name</label>
-          <input type="text" id="fullname" name="fullname" class="input" required>
-
-          <!-- Input for Email -->
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" class="input" required>
-
-          <!-- Input for Shipping Address -->
-          <label for="address">Shipping Address</label>
-          <textarea id="address" name="address" rows="3" class="input" required></textarea>
-        </fieldset>
-
-        <!-- Payment Information Section -->
-        <fieldset class="filter mt-md">
-          <legend>Payment Information</legend>
-
-          <!-- Name on Card -->
-          <label for="cardname">Name on Card</label>
-          <input type="text" id="cardname" name="cardname" class="input" required>
-
-          <!-- Card Number -->
-          <label for="cardnumber">Card Number</label>
-          <input type="text" id="cardnumber" name="cardnumber" maxlength="16" class="input" required>
-
-          <!-- Expiry Date (Month/Year) -->
-          <label for="expdate">Expiry Date</label>
-          <input type="month" id="expdate" name="expdate" class="input" required>
-
-          <!-- CVV (hidden as password for security) -->
-          <label for="cvv">CVV</label>
-          <input type="password" id="cvv" name="cvv" maxlength="4" class="input" required>
-        </fieldset>
-
-        <!-- Submit button to place the order -->
-        <button type="submit" class="button button--primary mt-md">Place Order</button>
-      </form>
-    </main>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer u-center">
-      <p>&copy; 2024 Zeus Online Sneaker Store. All rights reserved.</p>
-      <!-- &copy; = copyright symbol -->
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Zeus Sneakers</h3>
+                <p>Your trusted source for premium sneakers. We bring you the latest styles and timeless classics from top brands around the world.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@zeussneakers.com</p>
+                <p>Phone: +27 123 456 789</p>
+                <p>Location: Johannesburg, South Africa</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Zeus Sneakers. All rights reserved.</p>
+        </div>
     </footer>
 
-  </div>
+    <script src="script.js"></script>
 </body>
 </html>
-<!-- End of the HTML document -->

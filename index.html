@@ -1,48 +1,244 @@
 <!DOCTYPE html>
-<!-- Declares the document type (HTML5) -->
-
 <html lang="en">
-<!-- The page language is English -->
-
 <head>
     <meta charset="UTF-8">
-    <!-- Ensures all text and special characters display correctly -->
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Makes the site responsive (adapts to mobile, tablet, desktop) -->
-
-    <title>Zeus Online Sneaker Store | Homepage</title>
-    <!-- The title appears on the browser tab -->
-
-    <!-- Hooked stylesheet -->
-    <link rel="stylesheet" href="zeus-style.css">
-    <!-- Connects to external CSS for styling -->
+    
+    <!--
+         SEO META TAGS
+         These meta tags help your website rank higher in search results.
+    -->
+    <meta name="description" content="Shop premium sneakers at Zeus Online Sneaker Store. Discover exclusive collections of high-quality sneakers from top brands. Fast shipping across Africa, competitive prices, and authenticity guaranteed.">
+    <meta name="keywords" content="sneakers, Zeus sneakers, premium sneakers, buy sneakers online, men's sneakers, women's sneakers, unisex sneakers, athletic shoes, streetwear, South Africa, online shoe store">
+    <meta name="author" content="Zeus Online Sneaker Store">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags (for Facebook, LinkedIn sharing) -->
+    <meta property="og:title" content="Zeus Sneakers - Premium Sneakers Online Store">
+    <meta property="og:description" content="Shop authentic, high-quality sneakers from Zeus. Latest releases, classic styles, and unbeatable prices with fast delivery across Africa.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.zeussneakers.com/">
+    <meta property="og:image" content="https://www.zeussneakers.com/Images/zeus-sneakers-hero-banner.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zeus Sneakers - Premium Sneakers Online Store">
+    <meta name="twitter:description" content="Shop authentic, high-quality sneakers from Zeus. Latest releases and classic styles.">
+    <meta name="twitter:image" content="https://www.zeussneakers.com/Images/zeus-sneakers-hero-banner.jpg">
+    
+    <!-- Page Title -->
+    <title>Zeus Sneakers - Premium Sneakers Online Store</title>
+    
+    <!-- Link to CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- ================= HEADER ================= -->
-    <header>
-      <nav class="navbar">
-        <!-- Brand / Logo -->
-        <a class="logo" href="index.html">ZEUS SNEAKERS</a>
+    <!--
+         NAVIGATION BAR
+    -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">⚡ ZEUS SNEAKERS</a>
+            
+            <!-- Mobile menu toggle button -->
+            <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            
+            <!-- Navigation links -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- Navigation menu (links to different pages) -->
-        <ul class="nav-links" id="primary-navigation">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Products.html">Shop</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="cart.html">Cart</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <!-- HERO SECTION -->
+    <section class="hero" style="background-image: url('Images/Sneaker 1.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to Zeus Online Sneaker Store</h1>
+            <p>
+                Your one-stop shop for premium sneakers. Explore our exclusive collection of high-quality 
+                sneakers from top brands. Whether you're looking for the latest releases or classic styles, 
+                we have something for every sneaker enthusiast.
+            </p>
+            <a href="products.html" class="btn-primary">Shop Now</a>
+        </div>
+    </section>
 
-        <!-- Hamburger button (for mobile navigation) -->
-        <!-- aria-controls / aria-expanded / aria-label 
-             are for accessibility (screen readers) -->
-        <button class="hamburger"
-                aria-controls="primary-navigation"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-          <!-- These spans are styled with CSS to look like 3 horizontal lines -->
+    <!--  MAIN CONTENT -->
+    <div class="container">
+        
+        <!-- WHY CHOOSE US SECTION -->
+        <section>
+            <h2>Why Choose Us?</h2>
+            <ul class="features-list">
+                <li>⚡ <strong>Authenticity Guaranteed:</strong> We source directly from trusted brands.</li>
+                <li>⚡ <strong>Wide Selection:</strong> Limited-edition releases & everyday classics.</li>
+                <li>⚡ <strong>Competitive Prices:</strong> Premium sneakers at unbeatable prices.</li>
+                <li>⚡ <strong>Fast Shipping:</strong> Quick delivery across Africa.</li>
+                <li>⚡ <strong>Exceptional Service:</strong> Dedicated support team for you.</li>
+            </ul>
+        </section>
+
+        <!-- FEATURED IMAGE -->
+        <section>
+            <img src="Images/Sneaker 7.jpg" alt="Zeus Sneaker Models" class="full-width-image">
+        </section>
+
+        <!-- TABS SECTION - INTERACTIVE ELEMENT-->
+        <section class="tabs-container">
+            <h2 class="text-center">Featured Collections</h2>
+            
+            <!-- Tab Buttons -->
+            <div class="tabs-buttons">
+                <button class="tab-button active" onclick="showTab('new-arrivals')">New Arrivals</button>
+                <button class="tab-button" onclick="showTab('best-sellers')">Best Sellers</button>
+                <button class="tab-button" onclick="showTab('on-sale')">On Sale</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- NEW ARRIVALS TAB -->
+                <div id="new-arrivals" class="tab-panel active">
+                    <h3 style="color: #ea580c;">New Arrivals</h3>
+                    <p style="margin-bottom: 1.5rem;">
+                        Check out the latest sneakers that just dropped! These fresh styles are straight from 
+                        the runway and ready to elevate your sneaker game.
+                    </p>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="Images/Sneaker 2.jpg" alt="New Arrival 1">
+                            <h4>ZEUS AURA Women's Sneaker</h4>
+                            <p class="product-price">R1,499</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="Images/Sneaker 4.jpg" alt="New Arrival 2">
+                            <h4>ZEUS TITAN Men's Sneaker</h4>
+                            <p class="product-price">R1,799</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="Images/Sneaker 5.jpg" alt="New Arrival 3">
+                            <h4>ZEUS NOVA Unisex Sneaker</h4>
+                            <p class="product-price">R1,599</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BEST SELLERS TAB -->
+                <div id="best-sellers" class="tab-panel">
+                    <h3 style="color: #ea580c;">Best Sellers</h3>
+                    <p style="margin-bottom: 1.5rem;">
+                        Our most popular sneakers that everyone is loving! These tried-and-true favorites 
+                        have earned their spot as customer favorites.
+                    </p>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <img src="Images/Sneaker 3.jpg" alt="Best Seller 1">
+                            <h4>Classic Zeus Runner</h4>
+                            <p class="product-price">R1,299</p>
+                            <p class="product-rating">⭐ 4.8/5 (234 reviews)</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="Images/Sneaker 6.jpg" alt="Best Seller 2">
+                            <h4>Zeus Street Pro</h4>
+                            <p class="product-price">R1,699</p>
+                            <p class="product-rating">⭐ 4.9/5 (189 reviews)</p>
+                        </div>
+                        <div class="product-card">
+                            <img src="Images/Sneaker 2.jpg" alt="Best Seller 3">
+                            <h4>ZEUS AURA Women's</h4>
+                            <p class="product-price">R1,499</p>
+                            <p class="product-rating">⭐ 4.7/5 (312 reviews)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ON SALE TAB -->
+                <div id="on-sale" class="tab-panel">
+                    <h3 style="color: #ea580c;">On Sale</h3>
+                    <p style="margin-bottom: 1.5rem;">
+                        Don't miss out on these amazing deals! Limited time offers on premium sneakers. 
+                        Grab them before they're gone!
+                    </p>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <span class="sale-badge">-30%</span>
+                            <img src="Images/Sneaker 4.jpg" alt="Sale Item 1">
+                            <h4>ZEUS TITAN Men's Sneaker</h4>
+                            <p><span class="product-price-old">R1,799</span></p>
+                            <p class="product-price" style="font-size: 1.25rem;">R1,259</p>
+                        </div>
+                        <div class="product-card">
+                            <span class="sale-badge">-25%</span>
+                            <img src="Images/Sneaker 5.jpg" alt="Sale Item 2">
+                            <h4>ZEUS NOVA Unisex Sneaker</h4>
+                            <p><span class="product-price-old">R1,599</span></p>
+                            <p class="product-price" style="font-size: 1.25rem;">R1,199</p>
+                        </div>
+                        <div class="product-card">
+                            <span class="sale-badge">-20%</span>
+                            <img src="Images/Sneaker 3.jpg" alt="Sale Item 3">
+                            <h4>Classic Zeus Runner</h4>
+                            <p><span class="product-price-old">R1,299</span></p>
+                            <p class="product-price" style="font-size: 1.25rem;">R1,039</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SNEAKER DROP CALENDAR -->
+        <section class="text-center">
+            <h3 class="mb-2">Stay Tuned For Our Upcoming Drops</h3>
+            <img src="Images/Sneaker Drop Calender.png" alt="Zeus Sneaker Drop Calendar" class="centered-image">
+        </section>
+
+    </div>
+
+    <!--
+         FOOTER
+    -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Zeus Sneakers</h3>
+                <p>Your trusted source for premium sneakers. We bring you the latest styles and timeless classics from top brands around the world.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@zeussneakers.com</p>
+                <p>Phone: +27 123 456 789</p>
+                <p>Location: Johannesburg, South Africa</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Zeus Sneakers. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

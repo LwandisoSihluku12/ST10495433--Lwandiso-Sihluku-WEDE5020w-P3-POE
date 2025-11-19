@@ -1,0 +1,47 @@
+# ========================================
+# ROBOTS.TXT - Search Engine Crawler Instructions
+# ========================================
+#
+# This file tells search engine crawlers (like Google's bot) which pages
+# they can and cannot access on your website.
+#
+# HOW IT WORKS:
+# - User-agent: Specifies which crawler these rules apply to (* means all)
+# - Allow: Pages that crawlers CAN access
+# - Disallow: Pages that crawlers CANNOT access
+# - Sitemap: Location of the sitemap file
+#
+# WHY IT'S IMPORTANT:
+# - Helps search engines index your site efficiently
+# - Protects private or admin pages from being indexed
+# - Improves SEO by directing crawlers to important content
+# ========================================
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Disallow crawling of any admin or private directories (if they exist)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Disallow crawling of scripts and stylesheets (optional - usually allowed)
+# Allow: /styles.css
+# Allow: /script.js
+
+# Sitemap location
+# This helps search engines find all pages on your site
+Sitemap: https://www.zeussneakers.com/sitemap.xml
+
+# ========================================
+# ADDITIONAL NOTES FOR BEGINNERS:
+# ========================================
+# 
+# 1. This file must be placed in the root directory of your website
+# 2. The file name must be exactly "robots.txt" (lowercase)
+# 3. Search engines will look for this file at: https://yoursite.com/robots.txt
+# 4. Not all crawlers respect robots.txt (malicious bots may ignore it)
+# 5. Don't use robots.txt to hide sensitive information - use proper authentication instead
+
+(GOT  THIS SPECIFIC INFORMATION FROM AI - CHATGPT
+)

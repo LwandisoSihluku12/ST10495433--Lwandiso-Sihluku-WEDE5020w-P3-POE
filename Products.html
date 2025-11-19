@@ -1,141 +1,296 @@
 <!DOCTYPE html>
-<!-- Tells the browser this is an HTML5 document -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <!-- Ensures the website is mobile-friendly and scales correctly on different devices -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Zeus Online Sneaker Store | Products</title>
-  
-  <!-- Link to external CSS stylesheet for styling -->
-  <link rel="stylesheet" href="zeus-style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our complete collection of premium Zeus sneakers. Shop men's, women's, and unisex styles.">
+    <title>Products - Zeus Sneakers</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page"> <!-- Wrapper div for the whole page -->
-
-    <!-- HEADER SECTION -->
-    <header class="header">
-      <div class="container header__inner">
-        <!-- Store branding / logo -->
-        <div class="brand">ZEUS SNEAKERS</div>
-        
-        <!-- Navigation menu -->
-        <nav class="nav">
-          <a href="index.html" class="nav__link">Home</a>
-          <a href="about.html" class="nav__link">About Us</a>
-          <a href="products.html" class="nav__link">Products</a>
-          <a href="cart.html" class="nav__link">Cart</a>
-          <a href="contact.html" class="nav__link">Contact Us</a>
-        </nav>
-
-        <!-- Hamburger menu (☰) for smaller screens (mobile devices) -->
-        <button class="header__burger">☰</button>
-      </div>
-    </header>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">⚡ ZEUS SNEAKERS</a>
+            <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- MAIN CONTENT -->
-    <main class="main container">
-      <!-- Main page heading -->
-      <h1>Our Products</h1>
+    <div class="container">
+        <h1 class="text-center mb-4">Our Premium Collection</h1>
+        <p class="text-center mb-4" style="font-size: 1.125rem; color: #6b7280;">
+            Discover the perfect pair from our curated selection of Zeus sneakers. Each design combines style, comfort, and quality.
+        </p>
 
-      <!-- Short intro/description -->
-      <p class="lead">
-        Explore our exclusive collection of premium sneakers from top brands. Whether you're looking for the latest releases or classic styles, 
-        we have something for every sneaker enthusiast.
-      </p>
+        <!-- SEARCH AND FILTER SECTION -->
+        <div class="search-filter-container">
+            <div class="search-box">
+                <!-- Search input field -->
+                <input 
+                    type="text" 
+                    id="product-search" 
+                    placeholder="🔍 Search products by name or price..."
+                    aria-label="Search products"
+                >
+                
+                <!-- Sort dropdown -->
+                <select id="product-sort" aria-label="Sort products">
+                    <option value="default">Sort By</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name-az">Name: A to Z</option>
+                    <option value="name-za">Name: Z to A</option>
+                </select>
+                
+                <!-- Reset button -->
+                <button onclick="resetFilters()" aria-label="Reset filters">
+                    Reset Filters
+                </button>
+            </div>
+        </div>
 
-      <h2 class="mt-md">Own the Walk!!</h2>
-
-      <!-- PRODUCT GRID (section to display products in a grid format) -->
-      <section class="products mt-md">
-        
-        <!-- PRODUCT 1 -->
-        <article class="product-card">
-          <!-- Sneaker image -->
-          <img src="Images/Sneaker 2.jpg" alt="ZEUS AURA Women’s Sneaker" class="product-card__img">
-          
-          <!-- Product description details -->
-          <div class="product-card__body">
-            <h3 class="product-card__title">ZEUS AURA Women’s Sneaker</h3>
-            <p class="product-card__price">R1,499</p>
-            <p>
-              Step into effortless style and all-day comfort with the ZEUS AURA Women’s Sneaker. Designed for the modern woman, 
-              this sneaker combines sleek minimalism with bold Zeus energy.
-            </p>
-            <!-- Sneaker features list -->
-            <ul>
-              <li>⚡ Lightweight breathable mesh upper</li>
-              <li>⚡ Cushioned midsole for comfort</li>
-              <li>⚡ Durable rubber outsole with grip</li>
-              <li>⚡ Minimalist ZEUS branding</li>
-              <li>⚡ Available in White, Black, Blush Pink</li>
-            </ul>
-            <p><strong>Sizes:</strong> UK 3 – UK 8</p>
-            <p><strong>Style Tip:</strong> Pair with cropped jeans and a bomber jacket for bold streetwear, or leggings for laid-back vibes.</p>
+        <!-- PRODUCT GRID -->
+        <div class="product-grid">
             
-            <!-- Add to Cart button -->
-            <button class="product-card__btn">Add to Cart</button>
-          </div>
-        </article>
+            <!-- PRODUCT 1: ZEUS AURA Women's Sneaker -->
+            <div class="product-card">
+                <img src="Images/Sneaker 2.jpg" alt="ZEUS AURA Women's Sneaker">
+                <h4>ZEUS AURA Women's Sneaker</h4>
+                <p class="product-price">R1,499</p>
+                <p style="color: #6b7280; margin: 0.5rem 0;">Step into effortless style and all-day comfort with the ZEUS AURA Women's Sneaker.</p>
+                
+                <!-- ACCORDION for product details -->
+                <div style="margin-top: 1rem;">
+                    <button 
+                        onclick="toggleProductAccordion('product-1')" 
+                        style="width: 100%; text-align: left; background: #f3f4f6; padding: 0.75rem; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;"
+                    >
+                        View Details ▼
+                    </button>
+                    <div id="product-1" style="display: none; margin-top: 0.5rem; padding: 1rem; background: #f9fafb; border-radius: 4px;">
+                        <p><strong>Specifications:</strong></p>
+                        <ul style="margin-left: 1.5rem; color: #4b5563;">
+                            <li>Lightweight breathable mesh upper</li>
+                            <li>Cushioned midsole for comfort</li>
+                            <li>Durable rubber outsole with grip</li>
+                            <li>Minimalist ZEUS branding</li>
+                            <li>Available in White, Black, Blush Pink</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;"><strong>Sizes:</strong> UK 3 – UK 8</p>
+                        <p style="margin-top: 0.5rem;"><strong>Style Tip:</strong> Pair with cropped jeans and a bomber jacket for bold streetwear.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Reviews:</strong> ⭐ 4.7/5 (128 reviews)</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- PRODUCT 2 -->
-        <article class="product-card">
-          <img src="Images/Sneaker 4.jpg" alt="ZEUS TITAN Men’s Sneaker" class="product-card__img">
-          <div class="product-card__body">
-            <h3 class="product-card__title">ZEUS TITAN Men’s Sneaker</h3>
-            <p class="product-card__price">R1,799</p>
-            <p>
-              Unleash unstoppable energy with the ZEUS TITAN Men’s Sneaker — where raw power meets modern street style. 
-              Bold silhouette, breathable knit, and shock-absorbing sole for unstoppable comfort.
-            </p>
-            <ul>
-              <li>⚡ Adaptive breathable knit upper</li>
-              <li>⚡ High-rebound cushioned sole</li>
-              <li>⚡ Reinforced heel support</li>
-              <li>⚡ Durable, non-slip outsole</li>
-              <li>⚡ Bold ZEUS lightning branding</li>
-            </ul>
-            <p><strong>Colors:</strong> Storm Black, Zeus White, Thunder Grey</p>
-            <p><strong>Sizes:</strong> UK 6 – UK 12</p>
-            <p><strong>Style Tip:</strong> Pair with joggers + hoodie for streetwear edge, or jeans + tee for weekends.</p>
-            <button class="product-card__btn">Add to Cart</button>
-          </div>
-        </article>
+            <!-- PRODUCT 2: ZEUS TITAN Men's Sneaker -->
+            <div class="product-card">
+                <img src="Images/Sneaker 4.jpg" alt="ZEUS TITAN Men's Sneaker">
+                <h4>ZEUS TITAN Men's Sneaker</h4>
+                <p class="product-price">R1,799</p>
+                <p style="color: #6b7280; margin: 0.5rem 0;">Unleash unstoppable energy with the ZEUS TITAN Men's Sneaker — where raw power meets modern street style.</p>
+                
+                <div style="margin-top: 1rem;">
+                    <button 
+                        onclick="toggleProductAccordion('product-2')" 
+                        style="width: 100%; text-align: left; background: #f3f4f6; padding: 0.75rem; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;"
+                    >
+                        View Details ▼
+                    </button>
+                    <div id="product-2" style="display: none; margin-top: 0.5rem; padding: 1rem; background: #f9fafb; border-radius: 4px;">
+                        <p><strong>Specifications:</strong></p>
+                        <ul style="margin-left: 1.5rem; color: #4b5563;">
+                            <li>Adaptive breathable knit upper</li>
+                            <li>High-rebound cushioned sole</li>
+                            <li>Reinforced heel support</li>
+                            <li>Durable, non-slip outsole</li>
+                            <li>Bold ZEUS lightning branding</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;"><strong>Sizes:</strong> UK 6 – UK 12</p>
+                        <p style="margin-top: 0.5rem;"><strong>Style Tip:</strong> Pair with joggers + hoodie for streetwear edge.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Reviews:</strong> ⭐ 4.9/5 (203 reviews)</p>
+                    </div>
+                </div>
+            </div>
 
-        <!-- PRODUCT 3 -->
-        <article class="product-card">
-          <img src="Images/Sneaker 5.jpg" alt="ZEUS NOVA Unisex Sneaker" class="product-card__img">
-          <div class="product-card__body">
-            <h3 class="product-card__title">ZEUS NOVA Unisex Sneaker</h3>
-            <p class="product-card__price">R1,599</p>
-            <p>
-              One sneaker. Infinite style. The ZEUS NOVA Unisex Sneaker adapts to your stride with lightweight build 
-              and cushioned sole while keeping the ZEUS bold attitude alive.
-            </p>
-            <ul>
-              <li>⚡ Clean unisex silhouette</li>
-              <li>⚡ Breathable mesh upper</li>
-              <li>⚡ Cushioned sole for max comfort</li>
-              <li>⚡ Non-slip rubber outsole</li>
-              <li>⚡ Minimal ZEUS branding + lightning detail</li>
-            </ul>
-            <p><strong>Colors:</strong> Cloud White, Onyx Black, Solar Beige</p>
-            <p><strong>Sizes:</strong> UK 3 – UK 12</p>
-            <p><strong>Style Tip:</strong> Joggers + bomber jacket for streetwear vibe, or shorts + tee for weekend look.</p>
-            <button class="product-card__btn">Add to Cart</button>
-          </div>
-        </article>
+            <!-- PRODUCT 3: ZEUS NOVA Unisex Sneaker -->
+            <div class="product-card">
+                <img src="Images/Sneaker 5.jpg" alt="ZEUS NOVA Unisex Sneaker">
+                <h4>ZEUS NOVA Unisex Sneaker</h4>
+                <p class="product-price">R1,599</p>
+                <p style="color: #6b7280; margin: 0.5rem 0;">One sneaker. Infinite style. The ZEUS NOVA Unisex Sneaker adapts to your stride.</p>
+                
+                <div style="margin-top: 1rem;">
+                    <button 
+                        onclick="toggleProductAccordion('product-3')" 
+                        style="width: 100%; text-align: left; background: #f3f4f6; padding: 0.75rem; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;"
+                    >
+                        View Details ▼
+                    </button>
+                    <div id="product-3" style="display: none; margin-top: 0.5rem; padding: 1rem; background: #f9fafb; border-radius: 4px;">
+                        <p><strong>Specifications:</strong></p>
+                        <ul style="margin-left: 1.5rem; color: #4b5563;">
+                            <li>Clean unisex silhouette</li>
+                            <li>Breathable mesh upper</li>
+                            <li>Cushioned sole for max comfort</li>
+                            <li>Non-slip rubber outsole</li>
+                            <li>Minimal ZEUS branding + lightning detail</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;"><strong>Sizes:</strong> UK 3 – UK 12</p>
+                        <p style="margin-top: 0.5rem;"><strong>Style Tip:</strong> Joggers + bomber jacket for streetwear vibe.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Reviews:</strong> ⭐ 4.8/5 (167 reviews)</p>
+                    </div>
+                </div>
+            </div>
 
-      </section>
-    </main>
+            <!-- PRODUCT 4: Classic Zeus Runner -->
+            <div class="product-card">
+                <img src="Images/Sneaker 3.jpg" alt="Classic Zeus Runner">
+                <h4>Classic Zeus Runner</h4>
+                <p class="product-price">R1,299</p>
+                <p style="color: #6b7280; margin: 0.5rem 0;">A timeless classic that never goes out of style. Perfect for everyday wear.</p>
+                
+                <div style="margin-top: 1rem;">
+                    <button 
+                        onclick="toggleProductAccordion('product-4')" 
+                        style="width: 100%; text-align: left; background: #f3f4f6; padding: 0.75rem; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;"
+                    >
+                        View Details ▼
+                    </button>
+                    <div id="product-4" style="display: none; margin-top: 0.5rem; padding: 1rem; background: #f9fafb; border-radius: 4px;">
+                        <p><strong>Specifications:</strong></p>
+                        <ul style="margin-left: 1.5rem; color: #4b5563;">
+                            <li>Classic leather upper</li>
+                            <li>Comfortable padded insole</li>
+                            <li>Flexible rubber outsole</li>
+                            <li>Iconic Zeus logo</li>
+                            <li>Available in multiple colors</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;"><strong>Sizes:</strong> UK 4 – UK 11</p>
+                        <p style="margin-top: 0.5rem;"><strong>Reviews:</strong> ⭐ 4.8/5 (234 reviews)</p>
+                    </div>
+                </div>
+            </div>
 
-    <!-- FOOTER SECTION -->
-    <footer class="footer u-center">
-      <p>&copy; 2024 Zeus Online Sneaker Store. All rights reserved.</p>
+            <!-- PRODUCT 5: Zeus Street Pro -->
+            <div class="product-card">
+                <img src="Images/Sneaker 6.jpg" alt="Zeus Street Pro">
+                <h4>Zeus Street Pro</h4>
+                <p class="product-price">R1,699</p>
+                <p style="color: #6b7280; margin: 0.5rem 0;">Professional-grade streetwear sneaker with premium materials and superior comfort.</p>
+                
+                <div style="margin-top: 1rem;">
+                    <button 
+                        onclick="toggleProductAccordion('product-5')" 
+                        style="width: 100%; text-align: left; background: #f3f4f6; padding: 0.75rem; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;"
+                    >
+                        View Details ▼
+                    </button>
+                    <div id="product-5" style="display: none; margin-top: 0.5rem; padding: 1rem; background: #f9fafb; border-radius: 4px;">
+                        <p><strong>Specifications:</strong></p>
+                        <ul style="margin-left: 1.5rem; color: #4b5563;">
+                            <li>Premium suede and mesh construction</li>
+                            <li>Advanced cushioning technology</li>
+                            <li>Enhanced ankle support</li>
+                            <li>High-traction outsole</li>
+                            <li>Reflective details for visibility</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;"><strong>Sizes:</strong> UK 6 – UK 13</p>
+                        <p style="margin-top: 0.5rem;"><strong>Reviews:</strong> ⭐ 4.9/5 (189 reviews)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 6: Zeus Elite Runner -->
+            <div class="product-card">
+                <img src="Images/Sneaker 1.jpg" alt="Zeus Elite Runner">
+                <h4>Zeus Elite Runner</h4>
+                <p class="product-price">R1,899</p>
+                <p style="color: #6b7280; margin: 0.5rem 0;">High-performance running shoe designed for serious athletes and sneaker enthusiasts.</p>
+                
+                <div style="margin-top: 1rem;">
+                    <button 
+                        onclick="toggleProductAccordion('product-6')" 
+                        style="width: 100%; text-align: left; background: #f3f4f6; padding: 0.75rem; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;"
+                    >
+                        View Details ▼
+                    </button>
+                    <div id="product-6" style="display: none; margin-top: 0.5rem; padding: 1rem; background: #f9fafb; border-radius: 4px;">
+                        <p><strong>Specifications:</strong></p>
+                        <ul style="margin-left: 1.5rem; color: #4b5563;">
+                            <li>Engineered mesh for breathability</li>
+                            <li>Responsive foam midsole</li>
+                            <li>Carbon fiber plate for propulsion</li>
+                            <li>Lightweight design</li>
+                            <li>Performance-oriented fit</li>
+                        </ul>
+                        <p style="margin-top: 0.5rem;"><strong>Sizes:</strong> UK 5 – UK 12</p>
+                        <p style="margin-top: 0.5rem;"><strong>Reviews:</strong> ⭐ 4.9/5 (156 reviews)</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Zeus Sneakers</h3>
+                <p>Your trusted source for premium sneakers. We bring you the latest styles and timeless classics from top brands around the world.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                <li><a href="enquiry.html">Enquiry</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Shipping Information</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@zeussneakers.com</p>
+                <p>Phone: +27 123 456 789</p>
+                <p>Location: Johannesburg, South Africa</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Zeus Sneakers. All rights reserved.</p>
+        </div>
     </footer>
 
-  </div>
+    <script src="script.js"></script>
+    <script>
+        // Product accordion toggle function
+        function toggleProductAccordion(productId) {
+            const element = document.getElementById(productId);
+            if (element.style.display === 'none' || element.style.display === '') {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
-<!-- End of the HTML document -->
