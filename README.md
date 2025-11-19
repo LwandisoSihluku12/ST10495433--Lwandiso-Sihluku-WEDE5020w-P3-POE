@@ -64,6 +64,7 @@ Changes from Part 2 feedback.
 Edited code to allow navigation to adapt to smaller sreens
 
 Changelog updates for PART 3
+Created new Page to have an enquiry page as per instruction
 Implemented Google Maps iframe embedded showing Johannesburg location
 - **Note:** Uses Google Maps embed API (not Leaflet/Mapbox, but meets the requirement for location-based features)
 styles.css (multiple locations)
