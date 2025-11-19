@@ -60,7 +60,7 @@ Styled pages with CSS for layout, typography, and responsive design.
 Added JavaScript to handle menu toggling and accessibility.
 Included product cards, sneaker drop calendar, and contact form iframe.
 
-Changes made based on PART 2 feedback 
+Changes made based on PART 2 feedback: 
 Edited my code so that my navigation doesnt dissapear on smaller screens
 kept a clear and detailed record of development right through the finalisation of my work in the changelog
 
